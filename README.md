@@ -2,7 +2,7 @@
 
 ### End-to-End Supply Chain Analytics, Business Intelligence & AI-Assisted Business Analysis
 
-**Technologies:** Python | PostgreSQL | SQL | Power BI | DAX | Generative AI | Jira | GitHub
+**Technologies:**Python | PostgreSQL | SQL | Power BI | DAX | Automated Business Analysis | Jira-Style Backlogs | GitHub
 
 ## Project Overview
 
