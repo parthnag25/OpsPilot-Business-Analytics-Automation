@@ -3,7 +3,7 @@ import pandas as pd
 
 
 # ---------------------------------------------------------
-# OpsPilot AI: Jira Backlog Generator
+# OpsPilot: Jira Backlog Generator
 # ---------------------------------------------------------
 # This script converts AI Business Analyst outputs into a
 # Jira-style backlog CSV.
@@ -42,19 +42,18 @@ def create_labels(row: pd.Series) -> str:
     issue_type = row["issue_type"]
 
     if issue_type == "Product Stockout Risk":
-        return "inventory,stockout,supply-chain,ai-generated"
+        return "inventory,stockout,supply-chain,rule-generated"
 
     if issue_type == "Warehouse Delay Risk":
-        return "warehouse,late-shipments,operations,ai-generated"
+        return "warehouse,late-shipments,operations,rule-generated"
 
     if issue_type == "Supplier Delay Risk":
-        return "supplier-risk,delivery-delay,procurement,ai-generated"
+        return "supplier-risk,delivery-delay,procurement,rule-generated"
 
-    return "business-analysis,ai-generated"
-
-
+    return "business-analysis,rule-generated"
+    
 def main() -> None:
-    print("Generating OpsPilot AI Jira-style backlog...")
+    print("Generating OpsPilot Jira-style backlog...")
 
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
