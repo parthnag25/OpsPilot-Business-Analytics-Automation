@@ -1,9 +1,10 @@
 -- =========================================================
--- OpsPilot AI: SQL KPI Analysis Queries
+-- OpsPilot AI: PostgreSQL Analytics Views
 -- Project: Business Analyst Workbench
--- Purpose: Analyze supply chain operational KPIs,
---          identify risks, support Power BI reporting,
---          and prepare inputs for rule-based automation.
+-- Purpose: Create reusable analytical views for
+--          supply chain KPI reporting, operational risk
+--          identification, Power BI visualization,
+--          and rule-based business analysis automation.
 -- =========================================================
 
 
@@ -149,9 +150,11 @@ GROUP BY
 ORDER BY supplier_delay_rate_pct DESC;
 
 
--- =========================================================
--- 5. Delay Reason Analysis
--- =========================================================
+-- 5. Operational Issue Candidate View
+-- Note: The SQL view retains its original name,
+--       opspilot.vw_ai_issue_candidates, for compatibility.
+--       Issue detection uses predefined SQL rules,
+--       not an LLM or autonomous AI agents.
 
 SELECT
     delay_reason,
