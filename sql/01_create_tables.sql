@@ -1,6 +1,6 @@
 -- =========================================================
 -- OpsPilot AI: PostgreSQL Table Creation Script
--- Project: Agentic Business Analyst Workbench
+-- -- Project: Business Analyst Workbench
 -- Purpose: Create database schema and tables for supply chain analytics
 -- =========================================================
 
