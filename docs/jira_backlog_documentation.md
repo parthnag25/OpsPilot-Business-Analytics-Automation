@@ -192,28 +192,30 @@ The generator assigns labels according to the operational issue type.
 ### Product Stockout Risk
 
 ```text
-inventory,stockout,supply-chain,ai-generated
+inventory,stockout,supply-chain,rule-generated
 ```
 
 ### Warehouse Delay Risk
 
 ```text
-warehouse,late-shipments,operations,ai-generated
+warehouse,late-shipments,operations,rule-generated
 ```
 
 ### Supplier Delay Risk
 
 ```text
-supplier-risk,delivery-delay,procurement,ai-generated
+supplier-risk,delivery-delay,procurement,rule-generated
 ```
 
 ### Other Issue Types
 
 ```text
-business-analysis,ai-generated
+business-analysis,rule-generated
 ```
 
-**Implementation note:** The existing Python script uses the label `ai-generated`. This label is retained for compatibility with current output files. The actual generation method is rule-based Python automation rather than an LLM.
+**Implementation note:** The Jira backlog generator uses the label `rule-generated` to identify stories created through predefined Python rules and templates. The workflow does not use an LLM or autonomous AI agents.
+
+The generated CSV contains draft Jira-style user stories intended for human review. It does not create tickets directly in Jira.
 
 The label should not be interpreted as evidence of generative AI integration.
 
