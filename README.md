@@ -1,4 +1,4 @@
-OpsPilot AI | Business Analyst Workbench
+OpsPilot — Business Analytics & Automation Workbench
 
 Supply Chain Analytics, Power BI Dashboards & Automated Business Analysis
 
