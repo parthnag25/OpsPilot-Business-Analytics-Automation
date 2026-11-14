@@ -2,20 +2,38 @@
 
 ## 1. Project Overview
 
-OpsPilot AI is an end-to-end Business Analytics and AI project focused on supply chain operations.
+OpsPilot AI is an end-to-end supply chain analytics and automated business analysis project focused on operational performance monitoring, risk identification, and business decision support.
 
-The Power BI component transforms operational data stored in PostgreSQL into interactive dashboards that support performance monitoring, operational risk identification, and business decision-making.
+The Power BI component transforms operational data stored in PostgreSQL into interactive dashboards that help stakeholders evaluate supply chain performance and identify areas requiring further investigation.
 
-The report consists of five dashboard pages covering executive KPIs, inventory performance, warehouse operations, supplier and customer analysis, and AI-assisted business recommendations.
+The report consists of five dashboard pages covering:
+
+1. Executive performance monitoring
+2. Inventory and stockout risk
+3. Warehouse and shipment performance
+4. Supplier and customer performance
+5. Automated business insights and recommendations
+
+The project combines PostgreSQL, SQL, Python, Power BI, and DAX to connect operational analysis with structured business analysis deliverables.
 
 ### Project Objectives
 
-- Monitor supply chain performance using standardized KPIs.
-- Identify inventory stockout risks.
-- Analyze warehouse and shipment delays.
+- Monitor supply chain performance using standardized operational KPIs.
+- Identify inventory stockout risks across product categories.
+- Analyze warehouse performance and shipment delays.
 - Evaluate supplier reliability and customer segment performance.
-- Prioritize operational issues based on risk and severity.
-- Translate operational findings into AI-assisted business requirements, recommendations, and Jira-style user stories.
+- Prioritize operational issues according to predefined severity classifications.
+- Translate operational findings into proposed business requirements and recommendations.
+- Present automatically generated root-cause hypotheses and Jira-style user stories.
+- Support business decision-making through interactive reporting.
+
+### Implementation Clarification
+
+The current business analysis workflow uses Python-based conditional logic and predefined text templates.
+
+It does not invoke a large language model (LLM), use autonomous AI agents, or independently verify operational root causes.
+
+Generated hypotheses, requirements, and recommendations are preliminary business analysis outputs requiring human review.
 
 ---
 
@@ -23,21 +41,31 @@ The report consists of five dashboard pages covering executive KPIs, inventory p
 
 | Technology | Application |
 |---|---|
-| Power BI Desktop | Dashboard development and visualization |
+| Power BI Desktop | Interactive dashboard development |
 | PostgreSQL | Relational database and analytical views |
-| SQL | Data aggregation and KPI analysis |
-| DAX | Custom measures and calculations |
-| Power Query | Data connection and transformation |
-| Python | Data generation, validation, and AI-assisted workflows |
-| Generative AI | Root-cause hypotheses and business analysis outputs |
-| Jira-style Backlog | User stories and acceptance criteria |
+| SQL | Data aggregation and KPI calculations |
+| DAX | Custom measures and interactive dashboard calculations |
+| Power Query | Data connectivity and transformation |
+| Python | Synthetic data generation, validation, and workflow automation |
+| pandas | Structured data processing |
+| NumPy | Synthetic data generation |
+| Rule-Based Automation | Business analysis outputs and recommendation generation |
+| Jira-Style Backlog | Structured user stories and acceptance criteria |
 | GitHub | Version control and project documentation |
+
+### Data Processing Approach
+
+The project combines SQL-based data aggregation with Python-based business analysis automation.
+
+Power BI provides the reporting and visualization layer.
+
+The current implementation does not use a production orchestration platform or an autonomous agent framework.
 
 ---
 
 ## 3. Data Sources
 
-The Power BI report connects to the PostgreSQL database:
+The Power BI report connects to the PostgreSQL database.
 
 **Database:** `opspilot_ai`
 
@@ -49,26 +77,84 @@ The Power BI report connects to the PostgreSQL database:
 |---|---|
 | `vw_executive_kpi_summary` | Executive performance indicators |
 | `vw_product_stockout_risk` | Inventory and stockout analysis |
-| `vw_warehouse_performance` | Warehouse and shipment performance |
+| `vw_warehouse_performance` | Warehouse delay and shipment performance |
 | `vw_supplier_delay_risk` | Supplier reliability analysis |
 | `vw_ai_issue_candidates` | Operational issue identification and prioritization |
-| `vw_customer_segment_performance` | Customer segment order value, delays, and returns |
+| `vw_customer_segment_performance` | Customer segment order value, shipment delays, and returns |
 
-### Additional Data
+### Additional Data Sources
 
-The report also uses AI-generated business analysis outputs and Jira-style user stories produced through the project's Python workflows.
+The report also uses structured business analysis outputs generated by Python.
 
-These datasets support the interactive business requirements and AI recommendation displays.
+**Business Analysis Input**
+
+`data/processed/ai_issue_candidates.csv`
+
+**Business Analysis Output**
+
+`data/processed/ai_business_outputs.csv`
+
+**Jira-Style Backlog**
+
+`jira/jira_user_stories.csv`
+
+These files support automated business analysis and backlog preparation.
+
+The Power BI report uses the business analysis output to display issue-specific hypotheses, requirements, and recommendations.
+
+### Data Architecture
+
+```text
+Synthetic Supply Chain Data
+             |
+             v
+Python Data Generation
+             |
+             v
+Data Quality Validation
+             |
+             v
+PostgreSQL Database
+             |
+             v
+SQL KPI Calculations
+             |
+             +---------------------------+
+             |                           |
+             v                           v
+Power BI Analytical Views      Operational Issue Candidates
+             |                           |
+             |                           v
+             |                  Python Rule-Based Workflow
+             |                           |
+             |                           v
+             |                  Business Analysis Outputs
+             |                           |
+             |                 +---------+---------+
+             |                 |                   |
+             v                 v                   v
+       Power BI Report   Power BI Insights   Jira-Style Backlog
+```
+
+The workflow includes separate SQL, Python, and Power BI processing steps.
+
+Automated end-to-end orchestration has not been implemented.
 
 ---
 
 # 4. Power BI Dashboard Pages
 
+The Power BI report consists of five interactive dashboard pages.
+
+Each page focuses on a different operational analysis area.
+
+---
+
 ## Page 1: Executive Overview
 
 ### Purpose
 
-Provide management with a consolidated view of supply chain performance and operational risks.
+Provide management with a consolidated view of supply chain performance, operational risks, and proposed improvement opportunities.
 
 ### Executive KPIs
 
@@ -85,29 +171,70 @@ Provide management with a consolidated view of supply chain performance and oper
 
 ### Dashboard Components
 
-**KPI Cards**
+#### Executive KPI Cards
 
-Eight KPI cards summarize key operational indicators.
+Eight KPI cards summarize operational performance across orders, fulfillment, shipments, inventory, and returns.
 
-**Operational Issues by Severity**
+These metrics allow stakeholders to assess overall performance without reviewing individual operational tables.
 
-A horizontal bar chart displays the distribution of identified operational issues.
+#### Operational Issues by Severity
 
-**Issues by Risk Type**
+A horizontal bar chart displays operational issues grouped by severity.
 
-A horizontal bar chart compares supplier delay, warehouse delay, and product stockout risks.
+The analysis identifies:
 
-**Operational Risk Details**
+| Severity | Issue Count |
+|---|---:|
+| High | 6 |
+| Medium | 34 |
+| Low | 1 |
+| **Total** | **41** |
 
-A table displays risk type, business area, metric value, and severity.
+Severity classifications are derived from predefined operational rules.
 
-**AI-Assisted Recommendations**
+They represent analytical prioritization rather than stakeholder-approved business priorities.
 
-A table presents recommended actions associated with identified operational issues.
+#### Operational Issues by Risk Type
+
+A horizontal bar chart compares identified operational issues.
+
+| Issue Type | Issue Count |
+|---|---:|
+| Supplier Delay Risk | 25 |
+| Warehouse Delay Risk | 10 |
+| Product Stockout Risk | 6 |
+| **Total** | **41** |
+
+#### Operational Risk Details
+
+A table displays:
+
+- Business Area
+- Issue Type
+- Metric Value
+- Severity
+
+Conditional formatting helps highlight elevated operational risk.
+
+#### Automated Business Recommendations
+
+A table displays proposed business actions associated with identified operational issues.
+
+The recommendations are generated through predefined Python rules and templates.
+
+They are intended to support analyst review rather than automatically trigger business decisions.
 
 ### Business Value
 
-The dashboard helps stakeholders monitor performance, identify operational exceptions, and prioritize areas requiring further investigation.
+The Executive Overview provides a centralized view of operational performance.
+
+It enables stakeholders to:
+
+- Monitor major supply chain KPIs.
+- Identify operational exceptions.
+- Compare issue severity.
+- Prioritize areas requiring investigation.
+- Review proposed improvement actions.
 
 ---
 
@@ -115,29 +242,35 @@ The dashboard helps stakeholders monitor performance, identify operational excep
 
 ### Purpose
 
-Evaluate inventory availability, stockout exposure, and inventory buffer levels across product categories.
+Evaluate inventory availability, stockout exposure, and inventory buffer levels across product categories and subcategories.
 
 ### Dashboard Components
 
-**Stockout Rate by Product Category**
+#### Stockout Rate by Product Category
 
 Compares stockout rates across six product categories.
 
-**Top 10 Subcategories by Stockout Rate**
+The visualization helps identify categories experiencing elevated inventory availability risk.
 
-Identifies subcategories experiencing the highest stockout rates.
+#### Top 10 Subcategories by Stockout Rate
 
-**Weighted Average Inventory Buffer by Category**
+Ranks product subcategories according to their stockout rates.
 
-Measures the difference between weighted average closing stock and weighted average reorder points.
+This provides a more detailed view of inventory risk.
 
-**Total Stockout Records by Category**
+#### Weighted Average Inventory Buffer by Category
+
+Evaluates the relationship between average closing stock and average reorder points.
+
+#### Total Stockout Records by Category
 
 Displays the number of recorded stockout occurrences across product categories.
 
 ### DAX Methodology
 
 Weighted average inventory calculations use inventory record counts as weights.
+
+#### Weighted Average Closing Stock
 
 ```dax
 Weighted Avg Closing Stock =
@@ -151,6 +284,8 @@ DIVIDE(
 )
 ```
 
+#### Weighted Average Reorder Point
+
 ```dax
 Weighted Avg Reorder Point =
 DIVIDE(
@@ -163,21 +298,31 @@ DIVIDE(
 )
 ```
 
+#### Inventory Buffer
+
 ```dax
 Inventory Buffer =
 [Weighted Avg Closing Stock] -
 [Weighted Avg Reorder Point]
 ```
 
-The inventory buffer is expressed in stock units and should not be interpreted as a percentage.
+The inventory buffer is expressed in stock units.
+
+It should not be interpreted as a percentage.
 
 ### Key Findings
 
-Grocery recorded the highest category-level stockout rate at approximately 31.93%.
+Grocery recorded the highest category-level stockout rate at approximately **31.93%**.
 
-Computer Accessories recorded the highest displayed subcategory stockout rate at approximately 34.81%.
+Computer Accessories recorded the highest displayed subcategory stockout rate at approximately **34.81%**.
 
-These categories represent potential priorities for replenishment and inventory planning reviews.
+These findings indicate areas that may benefit from further investigation into replenishment planning, inventory availability, and reorder point configuration.
+
+### Business Value
+
+The dashboard supports inventory-related decision-making by identifying categories and subcategories with elevated stockout exposure.
+
+The findings can help guide further analysis of inventory planning processes.
 
 ---
 
@@ -189,19 +334,19 @@ Analyze shipment reliability and identify warehouses and geographic regions expe
 
 ### Dashboard Components
 
-**Average Shipment Delay (Days)**
+#### Average Shipment Delay
 
-Displays the weighted average shipment delay.
+Displays the weighted average shipment delay in days.
 
-**Top 3 Warehouses by Late Shipment Rate (%)**
+#### Top 3 Warehouses by Late Shipment Rate
 
 Highlights the three warehouses with the highest late shipment percentages.
 
-**Late Shipment Rate by Region (%)**
+#### Late Shipment Rate by Region
 
-Compares regional shipment performance.
+Compares shipment delay performance across geographic regions.
 
-**Warehouse Performance Table**
+#### Warehouse Performance Table
 
 Displays:
 
@@ -214,25 +359,52 @@ Displays:
 
 ### Key Findings
 
+#### Highest Warehouse Late Shipment Rates
+
 | Warehouse | Late Shipment Rate |
 |---|---:|
 | Los Angeles Fulfillment Center | 17.13% |
 | Columbus Distribution Hub | 16.64% |
 | Dallas Distribution Hub | 15.32% |
 
-The overall late shipment rate is 13.18%.
+#### Regional Late Shipment Rates
 
-The weighted average shipment delay is approximately 0.60 days.
+| Region | Late Shipment Rate |
+|---|---:|
+| West | 14.27% |
+| Midwest | 14.23% |
+| South | 13.45% |
+| Northeast | 9.67% |
+
+### Overall Shipment Performance
+
+| Metric | Value |
+|---|---:|
+| Total Shipments | 24,368 |
+| Delayed Shipments | 3,212 |
+| Late Shipment Rate | 13.18% |
+| Weighted Average Shipment Delay | 0.60 days |
 
 ### Conditional Formatting
 
-The warehouse table uses color-coded risk indicators to highlight locations with elevated late shipment rates.
+The warehouse performance table uses color-coded indicators to highlight elevated late shipment rates.
 
-The formatting supports rapid identification of operational exceptions.
+The formatting supports quick identification of operational exceptions.
 
 ### Business Value
 
-The dashboard helps operations teams identify warehouses requiring investigation into fulfillment processes, capacity constraints, and shipment coordination.
+The dashboard helps operations teams identify warehouses and regions requiring further investigation.
+
+Potential areas for analysis include:
+
+- Fulfillment process efficiency
+- Warehouse capacity
+- Labor allocation
+- Order processing delays
+- Carrier coordination
+- Inventory availability
+
+These factors are possible explanations and have not been independently established as causes.
 
 ---
 
@@ -240,15 +412,17 @@ The dashboard helps operations teams identify warehouses requiring investigation
 
 ### Purpose
 
-Evaluate supplier delivery reliability and customer segment performance.
+Evaluate supplier delivery reliability and customer segment performance using operational KPIs.
+
+The dashboard combines supplier delay analysis with customer order-value, shipment, and return metrics.
 
 ### Supplier Analysis
 
-**Top 5 Suppliers by Delay Rate (%)**
+#### Top 5 Suppliers by Delay Rate
 
 Identifies suppliers with the highest reported delay rates.
 
-**Supplier Delay Risk — Performance Details**
+#### Supplier Delay Risk — Performance Details
 
 Displays:
 
@@ -259,7 +433,7 @@ Displays:
 - Delay Rate (%)
 - Risk Score
 
-Conditional formatting highlights higher supplier delay rates.
+Conditional formatting highlights suppliers with elevated delay rates.
 
 ### Supplier Findings
 
@@ -271,17 +445,27 @@ Conditional formatting highlights higher supplier delay rates.
 | Supplier 20 | 14.31% |
 | Supplier 14 | 14.17% |
 
+These suppliers represent potential priorities for reliability analysis.
+
+The delay rates establish observed performance differences within the synthetic dataset, not confirmed explanations for those differences.
+
 ### Customer Analysis
 
-**Order Value by Customer Segment and Region**
+#### Order Value by Customer Segment and Region
 
-Compares order value across Retail, Wholesale, and Enterprise customers in four geographic regions.
+Compares order value across:
 
-**Delayed Order Rate by Customer Segment (%)**
+- Retail
+- Wholesale
+- Enterprise
+
+The analysis also includes geographic segmentation.
+
+#### Delayed Order Rate by Customer Segment
 
 Measures the proportion of orders associated with delayed shipments.
 
-**Return Rate by Customer Segment (%)**
+#### Return Rate by Customer Segment
 
 Measures the proportion of orders associated with returns.
 
@@ -297,21 +481,53 @@ Retail generates the highest total order value.
 
 Wholesale has the highest displayed delayed-order and return rates.
 
-These differences indicate areas for further analysis rather than establishing statistically significant performance gaps.
+These differences identify potential areas for further analysis.
 
-### Calculation Methodology
+They do not establish statistically significant differences or causal relationships.
 
-The customer segment measures aggregate order counts before calculating percentages.
+### Customer Segment Calculation Methodology
 
-**Delayed Order Rate**
+Customer segment KPIs use aggregated order counts.
 
-Delayed Orders / Total Orders
+#### Delayed Order Rate
 
-**Return Rate**
+The dashboard's customer delayed-order measure is derived from the SQL view's shipment-delay metric.
 
-Orders With Returns / Total Orders
+The view calculates:
 
-The calculations use weighted aggregation rather than summing regional percentages.
+```text
+Delayed Shipments / Total Shipments × 100
+```
+
+This is a shipment-based rate, even though the dashboard uses customer-segment terminology.
+
+#### Return Rate
+
+```text
+Orders With Returns / Total Orders × 100
+```
+
+The return metric uses distinct order-level inclusion through the SQL view's return aggregation.
+
+### Important Aggregation Consideration
+
+Customer segment rates should be recalculated from underlying counts when combining multiple regions.
+
+Summing or directly averaging regional percentages may produce misleading results.
+
+Weighted aggregation is required when comparing rates across regions or customer segments.
+
+### Business Value
+
+The dashboard supports:
+
+- Supplier reliability monitoring
+- Customer segment analysis
+- Shipment performance comparisons
+- Return rate evaluation
+- Operational risk identification
+
+The combined analysis provides a broader understanding of supply chain performance across suppliers and customers.
 
 ---
 
@@ -319,12 +535,29 @@ The calculations use weighted aggregation rather than summing regional percentag
 
 ### Purpose
 
-Demonstrate how operational findings can be translated into structured business analysis outputs using AI-assisted workflows.
+Demonstrate how identified operational issues can be translated into structured business analysis outputs using Python-based rule-driven automation.
 
-Implementation note: The dashboard retains its original AI-themed title. However, the current Python workflow generates business analysis outputs using predefined conditional rules and text templates. It does not call a large language model (LLM), use autonomous agents, or independently validate operational root causes. The displayed hypotheses, requirements, and recommendations are preliminary outputs requiring human review.
+### Implementation Note
+
+The dashboard retains its original title:
+
+**AI Business Insights & Recommendations**
+
+However, the underlying Python workflow generates its business analysis outputs through predefined conditional rules and text templates.
+
+The current implementation:
+
+- Does not call an LLM API.
+- Does not use autonomous AI agents.
+- Does not independently verify operational root causes.
+- Does not automatically approve business requirements.
+- Does not directly create issues in Jira.
+
+The generated hypotheses, requirements, and recommendations are preliminary outputs intended for human review.
+
 ### Interactive Dashboard Components
 
-**1. Select an Operational Issue**
+#### 1. Operational Issue Selection
 
 A selection table displays:
 
@@ -332,49 +565,51 @@ A selection table displays:
 - Issue Type
 - Severity
 
-Users select an operational issue to explore its associated analysis.
+Users can select an operational issue to explore its associated analysis.
 
-**2. AI-Generated Root Cause Hypothesis**
+#### 2. Root-Cause Hypothesis
 
-Displays a potential explanation for the selected operational issue.
+Displays a potential explanation associated with the selected operational issue.
 
-**3. Executive Recommendation**
+The explanation is generated using a predefined Python template.
 
-Provides a proposed business action addressing the selected issue.
+It should not be interpreted as a verified root cause.
 
-**4. Business Requirement**
+#### 3. Executive Recommendation
 
-Translates the identified problem into a proposed business requirement.
+Displays a proposed business action addressing the selected operational issue.
 
-**5. Jira User Story**
+#### 4. Business Requirement
 
-Displays a structured user story describing the intended functionality and business benefit.
+Displays a proposed requirement associated with the operational problem.
+
+#### 5. Jira User Story
+
+Displays a stakeholder-oriented user story describing the intended capability and business benefit.
 
 ### Interactive Workflow
 
+```text
 Operational Issue
-
-↓
-
+       |
+       v
 Root-Cause Hypothesis
-
-↓
-
+       |
+       v
 Executive Recommendation
-
-↓
-
+       |
+       v
 Business Requirement
-
-↓
-
+       |
+       v
 Jira User Story
+```
 
 ### DAX Implementation
 
 The interactive displays use `SELECTEDVALUE()` to retrieve the corresponding business analysis output within the selected issue's filter context.
 
-Example:
+Example from the documented report:
 
 ```dax
 Selected Root Cause Hypothesis =
@@ -384,19 +619,45 @@ SELECTEDVALUE(
 )
 ```
 
-Similar measures are used for executive recommendations, business requirements, and Jira user stories.
+The fallback message above preserves the wording from the existing documented DAX measure.
+
+Although it uses the term `AI-generated`, the current Python implementation is rule-based.
+
+For consistency, a future Power BI report update could change this fallback message to:
+
+```dax
+Selected Root Cause Hypothesis =
+SELECTEDVALUE(
+    'ai_business_outputs'[root_cause_hypothesis],
+    "Select an operational issue to view its generated root-cause hypothesis."
+)
+```
+
+Similar selection measures are used for:
+
+- Executive recommendations
+- Business requirements
+- Jira user stories
 
 ### Business Value
 
-This dashboard demonstrates how AI-assisted business analysis can connect operational reporting to requirements documentation and delivery planning.
+The dashboard demonstrates how structured workflow automation can connect operational reporting with business analysis documentation.
 
-AI-generated hypotheses and recommendations are proposals requiring human validation before implementation.
+It supports:
+
+- Operational issue exploration
+- Root-cause hypothesis review
+- Requirement drafting
+- Executive recommendation review
+- User story preparation
+
+The dashboard does not independently validate or implement its recommendations.
 
 ---
 
 # 5. Data Validation
 
-Data validation was performed using PostgreSQL queries to examine order counts and monetary values.
+Data validation was performed using PostgreSQL queries to examine operational record counts and order values.
 
 ### Order Value Reconciliation
 
@@ -411,23 +672,47 @@ Data validation was performed using PostgreSQL queries to examine order counts a
 
 ### Reconciliation
 
-Shipped Order Value + Order Value Without Shipments = Total Order Value
+```text
+Shipped Order Value
++
+Order Value Without Shipments
+=
+Total Order Value
+```
 
-$24,880,425.10 + $622,007.22 = $25,502,432.32
+```text
+$24,880,425.10
++
+$622,007.22
+=
+$25,502,432.32
+```
 
-This reconciliation explains why the Executive Overview and customer-segment analysis use different order-value totals.
+### KPI Interpretation
 
-The Executive Overview's Shipped Order Value represents orders with shipment records.
+**Total Order Value**
 
-The customer-segment analysis includes all orders.
+Includes all orders recorded in the order fact table.
 
-These metrics are distinguished to avoid misleading comparisons.
+**Shipped Order Value**
+
+Includes order value associated with orders that have shipment records.
+
+**Order Value Without Shipments**
+
+Includes the value of orders without corresponding shipment records.
+
+### Why This Matters
+
+The Executive Overview and customer-segment analysis use different order-value populations.
+
+Distinguishing these metrics prevents misleading comparisons and improves reporting transparency.
 
 ---
 
 # 6. Dashboard Design Principles
 
-The Power BI report follows a consistent visual design.
+The Power BI report follows a consistent visual design across its five pages.
 
 ### Theme
 
@@ -435,7 +720,7 @@ The Power BI report follows a consistent visual design.
 - High-contrast white text
 - Consistent chart typography
 - Teal and blue analytical visuals
-- Red, amber, and green risk indicators
+- Color-coded operational risk indicators
 
 ### Visualization Practices
 
@@ -448,13 +733,23 @@ The Power BI report follows a consistent visual design.
 - Tooltips for additional information
 - Scrollable tables where necessary
 
-The design emphasizes clarity, comparability, and business interpretation.
+### Design Objective
+
+The dashboard design prioritizes:
+
+- Clarity
+- Comparability
+- Consistency
+- Business interpretation
+- Operational decision support
+
+The reporting approach emphasizes communicating findings rather than simply displaying charts.
 
 ---
 
 # 7. Business Analyst Skills Demonstrated
 
-The dashboards demonstrate practical application of:
+The Power BI dashboards demonstrate practical application of several business analysis and analytics competencies.
 
 ### Data Analysis
 
@@ -462,7 +757,7 @@ The dashboards demonstrate practical application of:
 - Data aggregation
 - KPI calculations
 - Data validation
-- Weighted-average measures
+- Weighted-average calculations
 - Operational performance analysis
 
 ### Business Intelligence
@@ -483,26 +778,44 @@ The dashboards demonstrate practical application of:
 - Executive recommendation development
 - Jira-style user story creation
 
-### AI-Assisted Workflows
+### Automated Business Analysis
 
+- Python-based business rules
 - Structured business analysis outputs
-- AI-generated recommendations
-- Interactive AI insight presentation
-- Human-in-the-loop review considerations
+- Rule-generated recommendations
+- Automated requirement drafting
+- Jira-style backlog preparation
+- Human review considerations
 
 ---
 
 # 8. Limitations
 
-The project uses synthetic supply chain data.
+OpsPilot AI is a portfolio demonstration developed using synthetic supply chain data.
 
-The findings are illustrative and do not represent actual organizational performance.
+The operational findings are illustrative and do not represent actual organizational performance.
 
-Operational associations do not establish causation.
+### Analytical Limitations
 
-AI-generated root-cause hypotheses, recommendations, and requirements require validation by relevant stakeholders.
+- Operational associations do not establish causation.
+- Root-cause hypotheses require additional investigation.
+- KPI thresholds are predefined rather than externally validated.
+- Customer segment performance differences require further investigation before drawing business conclusions.
 
-The dashboard report is designed as a portfolio demonstration rather than a production deployment.
+### Automation Limitations
+
+- Business analysis outputs are generated using Python rules and templates.
+- The current workflow does not call an LLM.
+- The workflow does not use autonomous agents.
+- Generated recommendations require human validation.
+- Jira-style stories are exported to CSV rather than created through a live Jira integration.
+- Recommendations are not automatically implemented.
+
+### Deployment Limitations
+
+The Power BI report is designed as a portfolio demonstration.
+
+It is not presented as a production deployment or an enterprise decision-making system.
 
 ---
 
@@ -510,18 +823,37 @@ The dashboard report is designed as a portfolio demonstration rather than a prod
 
 Potential extensions include:
 
+### Data Engineering
+
 - Automated PostgreSQL data refresh
+- More comprehensive data validation
+- Automated pipeline orchestration
+- Historical data processing
+
+### Business Intelligence
+
 - Additional operational KPIs
-- Historical performance trend analysis
+- Historical performance trends
 - Target-based performance monitoring
-- Automated validation of AI-generated outputs
-- Expanded acceptance criteria reporting
-- Further integration with Jira workflows
-- Deployment through Power BI Service
+- More advanced Power BI interactions
+- Power BI Service deployment
+
+### Business Analysis Automation
+
+- Optional LLM integration
+- Structured output validation
+- Evidence-based recommendation generation
+- Human approval workflows
+- More detailed requirements and acceptance criteria
+- Direct Jira API integration
+
+These are proposed improvements and are not part of the current implemented functionality.
 
 ---
 
 # 10. Project Deliverable
+
+**Project:** OpsPilot AI — Business Analyst Workbench
 
 **Power BI Report:** `OpsPilot_AI_Dashboard.pbix`
 
@@ -533,4 +865,59 @@ Potential extensions include:
 
 **Supporting Technologies:** Python, SQL, DAX, Rule-Based Automation, Jira-Style Backlog Generation
 
-The completed report demonstrates how operational analytics and AI-assisted business analysis can support the progression from performance monitoring to proposed business action.
+### Dashboard Pages
+
+| Page | Dashboard |
+|---|---|
+| 1 | Executive Overview |
+| 2 | Inventory & Stockout Risk |
+| 3 | Warehouse & Shipment Performance |
+| 4 | Supplier & Customer Performance |
+| 5 | AI Business Insights & Recommendations |
+
+### Project Outcome
+
+The completed Power BI report demonstrates how supply chain operational data can be transformed into structured performance reporting and business analysis outputs.
+
+The project integrates PostgreSQL analytical views, Power BI dashboards, DAX calculations, and Python-based automation.
+
+During local testing, the supporting business analysis workflow successfully processed 41 operational issues and generated 41 Jira-style user stories.
+
+The primary contribution is a connected analytics and business analysis workbench that supports the progression from operational performance monitoring to proposed business action.
+
+---
+
+## 11. Related Project Documentation
+
+Additional technical documentation is available in the repository.
+
+- [Project README](../README.md)
+- [Automated Business Analyst Workflow](../docs/ai_workflow_documentation.md)
+- [Business Analysis Output Schema](../docs/ai_output_schema.md)
+- [Proposed LLM Prompt Template](../docs/ai_prompt_template.md)
+- [Jira-Style Backlog Documentation](../docs/jira_backlog_documentation.md)
+- [PostgreSQL Load Validation](../docs/postgresql_load_validation.md)
+- [SQL KPI Results Summary](../docs/sql_kpi_results_summary.md)
+
+### SQL Implementation
+
+- [Database Table Definitions](../sql/01_create_tables.sql)
+- [KPI Analysis Queries](../sql/03_kpi_analysis_queries.sql)
+- [Analytical SQL Views](../sql/04_create_analytics_views.sql)
+- [Customer Segment Performance View](../sql/05_create_customer_segment_view.sql)
+
+### Power BI Report
+
+[Download the Power BI Dashboard](OpsPilot_AI_Dashboard.pbix)
+
+---
+
+## 12. Final Summary
+
+OpsPilot AI demonstrates the application of SQL, PostgreSQL, Python, Power BI, and DAX to operational analytics and structured business analysis.
+
+The completed dashboards provide visibility into inventory availability, shipment reliability, supplier performance, customer segment metrics, and operational issue prioritization.
+
+The supporting rule-based Python workflow converts identified operational issues into preliminary business requirements, recommendations, and Jira-style user stories.
+
+The project demonstrates practical integration of data analytics, business intelligence, workflow automation, and requirements documentation within a single portfolio project.
