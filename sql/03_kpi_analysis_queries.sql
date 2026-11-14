@@ -210,36 +210,22 @@ ORDER BY return_rate_pct DESC;
 
 -- =========================================================
 -- 7. Customer Segment Performance
+-- Uses the validated customer segment analytical view
+-- Includes all orders, including orders without shipments
 -- =========================================================
 
 SELECT
-    c.customer_segment,
-    c.region,
-    COUNT(DISTINCT o.order_id) AS total_orders,
-    ROUND(SUM(o.order_value), 2) AS total_revenue,
-    ROUND(AVG(o.order_value), 2) AS average_order_value,
-    SUM(CASE WHEN s.delay_days > 0 THEN 1 ELSE 0 END) AS delayed_orders,
-    ROUND(
-        100.0 * SUM(CASE WHEN s.delay_days > 0 THEN 1 ELSE 0 END) / COUNT(s.shipment_id),
-        2
-    ) AS late_shipment_rate_pct,
-    COUNT(DISTINCT r.return_id) AS total_returns,
-    ROUND(
-        100.0 * COUNT(DISTINCT r.return_id) / COUNT(DISTINCT o.order_id),
-        2
-    ) AS return_rate_pct
-FROM opspilot.fact_orders o
-JOIN opspilot.dim_customer c
-    ON o.customer_id = c.customer_id
-JOIN opspilot.fact_shipments s
-    ON o.order_id = s.order_id
-LEFT JOIN opspilot.fact_returns r
-    ON o.order_id = r.order_id
-GROUP BY
-    c.customer_segment,
-    c.region
-ORDER BY total_revenue DESC;
-
+    customer_segment,
+    region,
+    total_orders,
+    total_revenue AS total_order_value,
+    average_order_value,
+    delayed_orders,
+    late_shipment_rate_pct,
+    total_returns AS returned_orders,
+    return_rate_pct
+FROM opspilot.vw_customer_segment_performance
+ORDER BY total_order_value DESC;
 
 -- =========================================================
 -- 8. AI Issue Candidate Table
