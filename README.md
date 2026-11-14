@@ -4,9 +4,9 @@ Supply Chain Analytics, Power BI Dashboards & Automated Business Analysis
 
 Technologies: Python | pandas | NumPy | PostgreSQL | SQL | Power BI | DAX | Rule-Based Automation | Jira-Style Backlogs | GitHub
 Project Overview
-OpsPilot AI is an end-to-end supply chain analytics and business analysis portfolio project. It uses synthetic operational data to demonstrate a workflow from data generation and validation to SQL-based analysis, interactive Power BI reporting, and automated business analysis deliverables.
+OpsPilot is an end-to-end supply chain analytics and business analysis portfolio project. It uses synthetic operational data to demonstrate a workflow from data generation and validation to SQL-based analysis, interactive Power BI reporting, and automated business analysis deliverables.
 I developed a PostgreSQL database and analytical views, built a five-page Power BI report, and implemented Python scripts that translate identified operational issues into root-cause hypotheses, proposed requirements, recommendations, acceptance criteria, and Jira-style user stories.
-Implementation note: The current business analysis generator is rule-based: it uses Python conditional logic and predefined text templates. It does not invoke an LLM, operate as an autonomous AI agent, or create issues directly in Jira. The project name OpsPilot AI reflects its concept and potential direction, not a claim that those capabilities are currently implemented.
+Implementation note: The current business analysis generator is rule-based: it uses Python conditional logic and predefined text templates. It does not invoke an LLM, operate as an autonomous AI agent, or create issues directly in Jira. 
 Business Questions
 Where is stockout exposure highest across products and categories?
 Which warehouses and regions have elevated late shipment rates?
@@ -146,7 +146,7 @@ These commands regenerate `data/processed/ai_business_outputs.csv` and `jira/jir
 To view the report, open `powerbi/OpsPilot_AI_Dashboard.pbix` in Power BI Desktop. Refresh requires access to the configured PostgreSQL source; the report is not a hosted public Power BI application.
 Repository Structure
 ```text
-OpsPilot-AI-Business-Analyst-Workbench/
+OpsPilot-Business-Analytics-Automation/
 ├── README.md
 ├── requirements.txt
 ├── data/
