@@ -321,6 +321,7 @@ The calculations use weighted aggregation rather than summing regional percentag
 
 Demonstrate how operational findings can be translated into structured business analysis outputs using AI-assisted workflows.
 
+Implementation note: The dashboard retains its original AI-themed title. However, the current Python workflow generates business analysis outputs using predefined conditional rules and text templates. It does not call a large language model (LLM), use autonomous agents, or independently validate operational root causes. The displayed hypotheses, requirements, and recommendations are preliminary outputs requiring human review.
 ### Interactive Dashboard Components
 
 **1. Select an Operational Issue**
@@ -530,6 +531,6 @@ Potential extensions include:
 
 **Reporting Platform:** Microsoft Power BI
 
-**Supporting Technologies:** Python, SQL, DAX, Generative AI, Jira-style workflows
+**Supporting Technologies:** Python, SQL, DAX, Rule-Based Automation, Jira-Style Backlog Generation
 
 The completed report demonstrates how operational analytics and AI-assisted business analysis can support the progression from performance monitoring to proposed business action.
