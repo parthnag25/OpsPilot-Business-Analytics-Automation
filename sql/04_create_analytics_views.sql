@@ -1,8 +1,10 @@
 -- =========================================================
--- OpsPilot AI: Analytics Views
--- Project: Agentic Business Analyst Workbench
--- Purpose: Create reusable SQL views for Power BI, AI issue
---          detection, and LLM-based requirement generation
+-- OpsPilot AI: PostgreSQL Analytics Views
+-- Project: Business Analyst Workbench
+-- Purpose: Create reusable analytical views for
+--          supply chain KPI reporting, operational risk
+--          identification, Power BI visualization,
+--          and rule-based business analysis automation.
 -- =========================================================
 
 -- =========================================================
@@ -148,9 +150,11 @@ GROUP BY
     sup.supplier_risk_score;
 
 
--- =========================================================
--- 5. AI Issue Candidate View
--- =========================================================
+-- 5. Operational Issue Candidate View
+-- Note: The SQL view retains its original name,
+--       opspilot.vw_ai_issue_candidates, for compatibility.
+--       Issue detection uses predefined SQL rules,
+--       not an LLM or autonomous AI agents.
 
 CREATE OR REPLACE VIEW opspilot.vw_ai_issue_candidates AS
 WITH warehouse_delay AS (
