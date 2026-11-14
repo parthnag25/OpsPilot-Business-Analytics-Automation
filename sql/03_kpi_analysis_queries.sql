@@ -1,8 +1,9 @@
 -- =========================================================
 -- OpsPilot AI: SQL KPI Analysis Queries
--- Project: Agentic Business Analyst Workbench
--- Purpose: Analyze supply chain KPIs for business insights,
---          dashboard development, and AI-assisted recommendations
+-- Project: Business Analyst Workbench
+-- Purpose: Analyze supply chain operational KPIs,
+--          identify risks, support Power BI reporting,
+--          and prepare inputs for rule-based automation.
 -- =========================================================
 
 
@@ -228,10 +229,12 @@ FROM opspilot.vw_customer_segment_performance
 ORDER BY total_order_value DESC;
 
 -- =========================================================
--- 8. AI Issue Candidate Table
--- Purpose: Create structured KPI issues that can later be
---          passed into the LLM workflow for requirement
---          generation, Jira stories, and recommendations.
+-- 8. Operational Issue Candidate Analysis
+-- Purpose: Identify operational risks using SQL-based
+--          KPI calculations and predefined thresholds.
+--          The results support Python-based business
+--          analysis automation and Jira-style user stories.
+-- Note: No LLM or autonomous AI agents are used.
 -- =========================================================
 
 WITH warehouse_delay AS (
