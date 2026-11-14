@@ -3,7 +3,7 @@ import pandas as pd
 
 
 # ---------------------------------------------------------
-# OpsPilot AI: Business Analyst Workflow
+# OpsPilot: Business Analyst Workflow
 # ---------------------------------------------------------
 # This script converts SQL-generated issue candidates into
 # structured Business Analyst deliverables.
@@ -202,7 +202,7 @@ def generate_executive_recommendation(row: pd.Series) -> str:
 
 
 def main() -> None:
-    print("Running OpsPilot AI Business Analyst workflow...")
+    print("Running OpsPilot Business Analyst workflow...")
 
     df = pd.read_csv(INPUT_PATH)
 

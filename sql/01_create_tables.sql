@@ -1,5 +1,5 @@
 -- =========================================================
--- OpsPilot AI: PostgreSQL Table Creation Script
+-- OpsPilot: PostgreSQL Table Creation Script
 -- -- Project: Business Analyst Workbench
 -- Purpose: Create database schema and tables for supply chain analytics
 -- =========================================================
@@ -149,4 +149,4 @@ CREATE TABLE opspilot.fact_returns (
 -- Basic Validation Query
 -- =========================================================
 
-SELECT 'OpsPilot AI tables created successfully' AS status;
+SELECT 'OpsPilot tables created successfully' AS status;

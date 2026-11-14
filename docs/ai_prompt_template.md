@@ -1,10 +1,10 @@
-# OpsPilot AI | Proposed LLM Prompt Template
+# OpsPilot | Proposed LLM Prompt Template
 
 ## 1. Overview
 
-This document describes a proposed large language model (LLM) prompt design for a potential future enhancement to OpsPilot AI.
+This document describes a proposed large language model (LLM) prompt design for a potential future enhancement to OpsPilot.
 
-OpsPilot AI currently uses Python-based conditional logic and predefined templates to generate structured business analysis outputs.
+OpsPilot currently uses Python-based conditional logic and predefined templates to generate structured business analysis outputs.
 
 The prompt described here is a design reference. It is **not executed by the current Python workflow**.
 
@@ -241,7 +241,7 @@ It would require:
 
 ## 9. Current Limitations
 
-This document does not establish that an LLM has been integrated into OpsPilot AI.
+This document does not establish that an LLM has been integrated into OpsPilot.
 
 The project currently does not:
 
@@ -271,7 +271,7 @@ Potential future enhancements include:
 
 ## 11. Summary
 
-This document provides a proposed prompt design for extending OpsPilot AI with LLM-supported business analysis.
+This document provides a proposed prompt design for extending OpsPilot with LLM-supported business analysis.
 
 The existing project remains a functional rule-based analytics and business analysis workflow.
 

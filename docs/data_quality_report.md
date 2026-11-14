@@ -1,6 +1,6 @@
 # Data Quality Report
 
-## Project: OpsPilot AI
+## Project: OpsPilot
 
 This report summarizes data quality checks performed on the synthetic supply chain dataset.
 

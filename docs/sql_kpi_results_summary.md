@@ -1,8 +1,8 @@
-# OpsPilot AI | SQL KPI Results Summary
+# OpsPilot | SQL KPI Results Summary
 
 ## 1. Project Overview
 
-OpsPilot AI is an end-to-end supply chain analytics and automated business analysis project developed using Python, PostgreSQL, SQL, Power BI, and rule-based workflow automation.
+OpsPilot is an end-to-end supply chain analytics and automated business analysis project developed using Python, PostgreSQL, SQL, Power BI, and rule-based workflow automation.
 
 This document summarizes the SQL KPI analysis performed on the project's synthetic supply chain dataset.
 
@@ -999,13 +999,13 @@ These are proposed improvements and are not currently implemented.
 
 ## Power BI Deliverable
 
-[OpsPilot AI Power BI Dashboard](../powerbi/OpsPilot_AI_Dashboard.pbix)
+[OpsPilot Power BI Dashboard](../powerbi/OpsPilot_AI_Dashboard.pbix)
 
 ---
 
 # 16. Final Summary
 
-The OpsPilot AI SQL analysis demonstrates how PostgreSQL and SQL can be used to evaluate supply chain performance and identify operational risks.
+The OpsPilot SQL analysis demonstrates how PostgreSQL and SQL can be used to evaluate supply chain performance and identify operational risks.
 
 The analysis covers 25,000 orders, 24,368 shipments, 30,000 inventory records, and 2,405 return records.
 

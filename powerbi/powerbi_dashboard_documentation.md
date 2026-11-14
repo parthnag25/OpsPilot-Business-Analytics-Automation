@@ -1,8 +1,8 @@
-# OpsPilot AI | Power BI Dashboard Documentation
+# OpsPilot | Power BI Dashboard Documentation
 
 ## 1. Project Overview
 
-OpsPilot AI is an end-to-end supply chain analytics and automated business analysis project focused on operational performance monitoring, risk identification, and business decision support.
+OpsPilot is an end-to-end supply chain analytics and automated business analysis project focused on operational performance monitoring, risk identification, and business decision support.
 
 The Power BI component transforms operational data stored in PostgreSQL into interactive dashboards that help stakeholders evaluate supply chain performance and identify areas requiring further investigation.
 
@@ -791,7 +791,7 @@ The Power BI dashboards demonstrate practical application of several business an
 
 # 8. Limitations
 
-OpsPilot AI is a portfolio demonstration developed using synthetic supply chain data.
+OpsPilot is a portfolio demonstration developed using synthetic supply chain data.
 
 The operational findings are illustrative and do not represent actual organizational performance.
 
@@ -853,7 +853,7 @@ These are proposed improvements and are not part of the current implemented func
 
 # 10. Project Deliverable
 
-**Project:** OpsPilot AI — Business Analyst Workbench
+**Project:** OpsPilot — Business Analyst Workbench
 
 **Power BI Report:** `OpsPilot_AI_Dashboard.pbix`
 
@@ -914,7 +914,7 @@ Additional technical documentation is available in the repository.
 
 ## 12. Final Summary
 
-OpsPilot AI demonstrates the application of SQL, PostgreSQL, Python, Power BI, and DAX to operational analytics and structured business analysis.
+OpsPilot demonstrates the application of SQL, PostgreSQL, Python, Power BI, and DAX to operational analytics and structured business analysis.
 
 The completed dashboards provide visibility into inventory availability, shipment reliability, supplier performance, customer segment metrics, and operational issue prioritization.
 

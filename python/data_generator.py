@@ -7,7 +7,7 @@ import pandas as pd
 
 
 # ---------------------------------------------------------
-# OpsPilot AI: Synthetic Supply Chain Data Generator
+# OpsPilot: Synthetic Supply Chain Data Generator
 # ---------------------------------------------------------
 # This script creates synthetic supply chain datasets for:
 # - date dimension
@@ -458,7 +458,7 @@ def create_fact_returns(
 # ---------------------------------------------------------
 
 def main() -> None:
-    print("Generating OpsPilot AI synthetic supply chain dataset...")
+    print("Generating OpsPilot synthetic supply chain dataset...")
 
     dim_date = create_dim_date()
     dim_supplier = create_dim_supplier()

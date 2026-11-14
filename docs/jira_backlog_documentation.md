@@ -1,8 +1,8 @@
-# OpsPilot AI | Jira-Style Backlog Documentation
+# OpsPilot | Jira-Style Backlog Documentation
 
 ## 1. Project Overview
 
-OpsPilot AI is a supply chain analytics and automated business analysis project.
+OpsPilot is a supply chain analytics and automated business analysis project.
 
 The Jira-style backlog component converts structured business analysis outputs into user stories that can support operational improvement planning.
 
@@ -417,7 +417,7 @@ The workflow shows how Python automation can help prepare consistent first-draft
 
 ## 20. Conclusion
 
-The OpsPilot AI Jira-style backlog workflow converts structured operational business analysis outputs into standardized backlog records.
+The OpsPilot Jira-style backlog workflow converts structured operational business analysis outputs into standardized backlog records.
 
 During local testing, the workflow successfully generated 41 Jira-style user stories.
 

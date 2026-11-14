@@ -1,8 +1,8 @@
-# OpsPilot AI | Automated Business Analysis Output Schema
+# OpsPilot | Automated Business Analysis Output Schema
 
 ## 1. Overview
 
-This document defines the input and output schemas used by the OpsPilot AI automated Business Analyst workflow.
+This document defines the input and output schemas used by the OpsPilot automated Business Analyst workflow.
 
 The workflow transforms SQL-derived operational issue candidates into structured business analysis deliverables using Python-based conditional logic and predefined templates.
 
@@ -307,7 +307,7 @@ These are proposed enhancements rather than implemented functionality.
 
 ## 15. Summary
 
-The OpsPilot AI output schema provides a structured interface between SQL-derived operational issues, Python-based business analysis automation, Power BI reporting, and Jira-style backlog preparation.
+The OpsPilot output schema provides a structured interface between SQL-derived operational issues, Python-based business analysis automation, Power BI reporting, and Jira-style backlog preparation.
 
 The current workflow successfully processes 41 operational issue records and generates 41 corresponding business analysis outputs.
 

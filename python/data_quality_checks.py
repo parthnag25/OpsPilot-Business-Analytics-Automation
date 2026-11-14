@@ -3,7 +3,7 @@ import pandas as pd
 
 
 # ---------------------------------------------------------
-# OpsPilot AI: Data Quality Checks
+# OpsPilot: Data Quality Checks
 # ---------------------------------------------------------
 # This script validates the generated synthetic supply chain
 # datasets before they are used for SQL analysis, Power BI,
@@ -62,7 +62,7 @@ def check_foreign_keys(
 
 
 def main() -> None:
-    print("Running OpsPilot AI data quality checks...")
+    print("Running OpsPilot data quality checks...")
 
     results = []
 
@@ -91,7 +91,7 @@ def main() -> None:
 
     results.append("# Data Quality Report")
     results.append("")
-    results.append("## Project: OpsPilot AI")
+    results.append("## Project: OpsPilot")
     results.append("")
     results.append("This report summarizes data quality checks performed on the synthetic supply chain dataset.")
     results.append("")

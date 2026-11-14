@@ -1,10 +1,10 @@
-# OpsPilot AI | Data Dictionary
+# OpsPilot | Data Dictionary
 
 ## 1. Overview
 
-This document defines the relational database tables, fields, relationships, and analytical metrics used in the OpsPilot AI Business Analyst Workbench.
+This document defines the relational database tables, fields, relationships, and analytical metrics used in the OpsPilot Business Analyst Workbench.
 
-OpsPilot AI is an end-to-end supply chain analytics and automated business analysis project developed using Python, PostgreSQL, SQL, Power BI, and DAX.
+OpsPilot is an end-to-end supply chain analytics and automated business analysis project developed using Python, PostgreSQL, SQL, Power BI, and DAX.
 
 The project uses synthetic supply chain data to demonstrate:
 
@@ -1030,7 +1030,7 @@ The dataset has several limitations:
 
 # 14. Conclusion
 
-The OpsPilot AI data dictionary documents the relational tables, analytical views, and structured workflow datasets used in the project.
+The OpsPilot data dictionary documents the relational tables, analytical views, and structured workflow datasets used in the project.
 
 The database contains five dimension tables, four fact tables, and six analytical views.
 

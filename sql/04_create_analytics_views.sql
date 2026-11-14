@@ -1,5 +1,5 @@
 -- =========================================================
--- OpsPilot AI: PostgreSQL Analytics Views
+-- OpsPilot: PostgreSQL Analytics Views
 -- Project: Business Analyst Workbench
 -- Purpose: Create reusable analytical views for
 --          supply chain KPI reporting, operational risk
@@ -246,4 +246,4 @@ FROM issue_candidates;
 -- Validation Query
 -- =========================================================
 
-SELECT 'OpsPilot AI analytics views created successfully' AS status;
+SELECT 'OpsPilot analytics views created successfully' AS status;

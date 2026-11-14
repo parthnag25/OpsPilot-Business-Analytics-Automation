@@ -1,8 +1,8 @@
-# OpsPilot AI | Project Charter
+# OpsPilot | Project Charter
 
 ## 1. Project Information
 
-**Project Name:** OpsPilot AI — Business Analyst Workbench
+**Project Name:** OpsPilot — Business Analyst Workbench
 
 **Project Type:** End-to-End Business Analytics and Workflow Automation Portfolio Project
 
@@ -18,7 +18,7 @@
 
 ## 2. Executive Summary
 
-OpsPilot AI is an end-to-end supply chain analytics and automated business analysis project developed to demonstrate how operational data can be transformed into business insights, structured requirements, and proposed improvement actions.
+OpsPilot is an end-to-end supply chain analytics and automated business analysis project developed to demonstrate how operational data can be transformed into business insights, structured requirements, and proposed improvement actions.
 
 The project combines synthetic supply chain datasets, PostgreSQL analytical views, Power BI dashboards, and Python-based automation.
 
@@ -47,7 +47,7 @@ Operational challenges may include:
 
 Business stakeholders need structured information to understand these issues, prioritize investigations, and develop improvement initiatives.
 
-OpsPilot AI addresses this challenge by combining analytical reporting with automated business analysis documentation.
+OpsPilot addresses this challenge by combining analytical reporting with automated business analysis documentation.
 
 ---
 
@@ -456,7 +456,7 @@ These capabilities are proposed enhancements rather than features of the current
 
 ## 17. Project Outcome
 
-OpsPilot AI demonstrates how operational data can be transformed into structured business insights and preliminary delivery documentation.
+OpsPilot demonstrates how operational data can be transformed into structured business insights and preliminary delivery documentation.
 
 The completed implementation combines:
 
@@ -488,7 +488,7 @@ Its primary contribution is demonstrating a connected approach to operational an
 
 ## 19. Conclusion
 
-OpsPilot AI is a completed supply chain analytics and automated business analysis portfolio project.
+OpsPilot is a completed supply chain analytics and automated business analysis portfolio project.
 
 It demonstrates how Python, PostgreSQL, SQL, Power BI, and structured automation can support operational performance analysis and business requirements preparation.
 

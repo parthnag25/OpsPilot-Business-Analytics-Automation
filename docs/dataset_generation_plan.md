@@ -1,8 +1,8 @@
 # Dataset Generation Plan
 
-## Project: OpsPilot AI
+## Project: OpsPilot
 
-This document defines the planned synthetic dataset generation approach for OpsPilot AI. The dataset will simulate supply chain operations across customers, products, suppliers, warehouses, orders, shipments, inventory, and returns.
+This document defines the planned synthetic dataset generation approach for OpsPilot. The dataset will simulate supply chain operations across customers, products, suppliers, warehouses, orders, shipments, inventory, and returns.
 
 The goal is to create realistic business scenarios that support KPI analysis, AI-assisted business analysis, Jira-style requirement generation, and Power BI dashboard development.
 
