@@ -167,7 +167,7 @@ Provide management with a consolidated view of supply chain performance, operati
 | Late Shipment Rate | 13.18% |
 | Stockout Rate | 31.64% |
 | Return Rate | 9.62% |
-| Shipping Cost per Order | $19.08 |
+| Avg Shipping Cost per Shipped Order  | $19.08 |
 
 ### Dashboard Components
 
