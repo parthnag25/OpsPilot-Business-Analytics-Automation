@@ -57,7 +57,7 @@ On-time delivery rate	86.82%
 Late shipment rate	13.18%
 Stockout rate	31.64%
 Return rate	9.62%
-Shipping cost per order	$19.08
+Avg shipping cost per shipped order    $19.08
 The issue tables display severity classifications and rule-generated proposed actions. These are suggestions for analyst review, not confirmed root causes.
 2. Inventory & Stockout Risk
 ![Inventory and Stockout Risk](images/Dahboard%20Images/Inventory%20%26%20Stockout%20Risk.png)
