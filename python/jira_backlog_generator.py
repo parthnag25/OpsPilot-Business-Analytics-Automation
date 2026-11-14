@@ -5,8 +5,8 @@ import pandas as pd
 # ---------------------------------------------------------
 # OpsPilot: Jira Backlog Generator
 # ---------------------------------------------------------
-# This script converts AI Business Analyst outputs into a
-# Jira-style backlog CSV.
+# This script converts rule-based business analysis
+# outputs into a Jira-style backlog CSV.
 #
 # Input:
 # data/processed/ai_business_outputs.csv
